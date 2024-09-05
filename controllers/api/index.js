@@ -7,7 +7,7 @@ const categoryRoute = require("./categoryRoute");
 const userRoute = require("./userRoute");
 
 // Defines POST Route to add new Notes (http://localhost:3000/api/notes)
-// Note: Route is Prefixed with '/api' through Express
+// Note: Routes are Prefixed with '/api' through Express
 router.use("/notes", noteRoute);
 router.use("/categories", categoryRoute);
 router.use("/users", userRoute);
