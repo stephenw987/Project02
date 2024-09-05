@@ -4,9 +4,9 @@ const { Model, DataTypes } = require("sequelize");
 // Requires App-specific Connection File
 const sequelize = require("../config/connection.js");
 
-class User extends Model {}
+class NoteUser extends Model {}
 
-User.init(
+NoteUser.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -28,8 +28,8 @@ User.init(
     freezeTableName: true,
     underscored: true,
     timestamps: false,
-    modelName: "user",
+    modelName: "noteuser",
   }
 );
 
-module.exports = User;
+module.exports = NoteUser;

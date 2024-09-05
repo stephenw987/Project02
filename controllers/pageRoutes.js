@@ -3,6 +3,7 @@ const router = require("express").Router();
 
 // Requires App-specific Model
 const Note = require("../models/Note.js");
+const Category = require("../models/Category.js");
 
 // GET Home (Index) Page Router
 // Note: Route is NOT Prefixed
@@ -11,12 +12,12 @@ router.get("/", async function (req, res) {
     const noteData = await Note.findAll();
 
     const notes = noteData.map((note) => note.get({ plain: true }));
-    // console.log("homeRoute.js Line 11: Data: ", notes);
+    // console.log("pageRoutes.js Line 15: Data: ", notes);
 
     // Renders Page, index.handlebars
     res.render("index", { notes });
   } catch (err) {
-    console.log("homeRoute.js Line 15: Error: ", err);
+    console.log("pageRoutes.js Line 20: Error: ", err);
     res.json(err);
   }
 });
@@ -28,7 +29,7 @@ router.get("/note/:id", async function (req, res) {
     const noteData = await Note.findByPk(req.params.id);
 
     const note = noteData.get({ plain: true });
-    // console.log("homeRoute.js Line 28: Data: ", note);
+    // console.log("pageRoutes.js Line 32: Data: ", note);
 
     // Renders Page, note.handlebars
     res.render("note", { note });

@@ -1,7 +1,7 @@
 // Module 15 - Project 2: Note Taker Application - Server Definition
 
 // Initialize Server:
-// Dev Start: npm run devstart
+// Dev Start: npm run dev
 
 // Requires Node Modules
 const path = require("path");

@@ -1,4 +1,5 @@
-{{! Module 15 Project 2: Note Taker - Edit / Delete Blog Entry }}
+{{! Module 15 Project 2: Note Taker - Edit / Delete Note }}
+{{!-- http://localhost:3000/note/{{id}} --}}
 
 <div>
   <form id="edit-note-form">
@@ -15,6 +16,14 @@
 
     <label for="note-body">Note Body</label>
     <textarea name="note-body" id="note-body">{{note.note_body}}</textarea>
+
+    <label for="category-id">Note Category</label>
+    <input
+      type="text"
+      name="category-id"
+      id="category-id"
+      value="{{note.category_id}}"
+    />
 
     <button type="submit" id="save-btn">Save Changes</button>
     <button type="button" id="delete-btn">Delete Note</button>
