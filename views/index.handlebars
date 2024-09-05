@@ -1,0 +1,53 @@
+{{! Module 15 Project 2: Note Taker - Homepage }}
+
+<div>
+  {{#each notes}}
+
+    <div class="note-container">
+      <div class="note-detail">
+        <h3>
+          Note ID
+        </h3>
+        <a href="/note/{{id}}">{{id}}</a>
+      </div>
+
+      <div class="note-detail">
+        <h3>
+          Note Title
+        </h3>
+        <p> {{note_title}} </p>
+      </div>
+
+      <div class="note-detail">
+        <h3>
+          Note Body
+        </h3>
+        <p> {{note_body}} </p>
+      </div>
+
+      <div class="note-detail">
+        <h3>
+          Category
+        </h3>
+        <p> {{category_id}} </p>
+      </div>
+
+      {{!-- <div>
+        <h3>
+          Categories
+        </h3>
+        {{#each categories}}
+
+          <div>
+            <p>
+              {{category_name}}
+            </p>
+          </div>
+
+        {{/each}}
+      </div> --}}
+
+    </div>
+
+  {{/each}}
+</div>

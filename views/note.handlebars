@@ -1,0 +1,24 @@
+{{! Module 15 Project 2: Note Taker - Edit / Delete Blog Entry }}
+
+<div>
+  <form id="edit-note-form">
+    {{! <label for="note-id">Note ID</label> }}
+    <input type="hidden" name="note-id" id="note-id" value="{{note.id}}" />
+
+    <label for="note-title">Note Title</label>
+    <input
+      type="text"
+      name="note-title"
+      id="note-title"
+      value="{{note.note_title}}"
+    />
+
+    <label for="note-body">Note Body</label>
+    <textarea name="note-body" id="note-body">{{note.note_body}}</textarea>
+
+    <button type="submit" id="save-btn">Save Changes</button>
+    <button type="button" id="delete-btn">Delete Note</button>
+  </form>
+</div>
+
+<script src="/js/edit-note.js"></script>
