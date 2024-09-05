@@ -21,3 +21,6 @@ const newUserHandler = async function (user) {
     },
   });
 };
+
+// Assigns User (Entry) Page "Save" button to newUserHandler Function
+document.querySelector("#join-form").addEventListener("submit", newUserHandler);
