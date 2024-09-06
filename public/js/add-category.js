@@ -19,7 +19,7 @@ const newCategoryHandler = async function (category) {
   });
 
   if (res.ok) {
-    document.location.replace("/");
+    document.location.replace("/category");
   } else {
     alert("New Category was not saved");
   }

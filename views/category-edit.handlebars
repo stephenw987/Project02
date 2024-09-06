@@ -1,0 +1,27 @@
+{{! Module 15 Project 2: Note Taker - Edit / Delete Category }}
+{{!-- http://localhost:3000/category/{{id}} --}}
+
+<div>
+  <form id="edit-category-form">
+    {{! <label for="category-id">Category ID</label> }}
+    <input
+      type="hidden"
+      name="category-id"
+      id="category-id"
+      value="{{category.id}}"
+    />
+
+    <label for="category-name">Category Name</label>
+    <input
+      type="text"
+      name="category-name"
+      id="category-name"
+      value="{{category.category_name}}"
+    />
+
+    <button type="submit" id="save-btn">Save Changes</button>
+    <button type="button" id="delete-btn">Delete Category</button>
+  </form>
+</div>
+
+<script src="/js/edit-category.js"></script>
