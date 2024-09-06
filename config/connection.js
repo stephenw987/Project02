@@ -12,10 +12,10 @@ if (process.env.DB_URL) {
   sequelize = new Sequelize(
     "notetaker_db",
     "postgres",
-    "password",
+    // "password",
     // process.env.DB_NAME,
     // process.env.DB_USER,
-    // process.env.DB_PASSWORD,
+    process.env.DB_PASSWORD,
     {
       host: "localhost",
       dialect: "postgres",
