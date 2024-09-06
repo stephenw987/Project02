@@ -10,9 +10,15 @@ const Category = require("../models/Category.js");
 router.get("/", async function (req, res) {
   try {
     const noteData = await Note.findAll();
+    const categoryData = await Category.findAll();
 
     const notes = noteData.map((note) => note.get({ plain: true }));
-    // console.log("pageRoutes.js Line 15: Data: ", notes);
+    console.log("pageRoutes.js Line 15: Data: ", notes);
+
+    const categories = categoryData.map((category) =>
+      category.get({ plain: true })
+    );
+    console.log(categories);
 
     // Renders Page, index.handlebars
     res.render("index", { notes });

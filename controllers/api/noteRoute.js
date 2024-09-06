@@ -56,6 +56,7 @@ router.delete("/:id", async function (req, res) {
         id: req.params.id,
       },
     });
+    res.sendStatus(200);
 
     console.log("noteRoute.js Line 57: Delete Route is active.");
   } catch (err) {

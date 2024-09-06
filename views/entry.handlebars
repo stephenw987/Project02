@@ -18,8 +18,15 @@
     </div>
 
     <div>
-      <label for="category-id">Note Category</label>
-      <input type="text" id="category-id" name="category-id" />
+      <label for="category">Note Category</label>
+      {{! <input type="text" id="category-id" name="category-id" /> }}
+
+      <select id="category-id">
+        {{#each categories}}
+          <option value="{{id}}">{{category_name}}</option>
+        {{/each}}
+      </select>
+
     </div>
 
     <button type="submit">Save Note</button>

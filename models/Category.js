@@ -18,6 +18,13 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    note_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "note",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
