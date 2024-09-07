@@ -20,6 +20,12 @@ const newUserHandler = async function (user) {
       "Content-Type": "application/json",
     },
   });
+
+  if (res.ok) {
+    document.location.replace("/");
+  } else {
+    alert("New User was not saved");
+  }
 };
 
 // Assigns User (Entry) Page "Save" button to newUserHandler Function
