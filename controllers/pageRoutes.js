@@ -13,7 +13,7 @@ router.get("/", async function (req, res) {
     const categoryData = await Category.findAll();
 
     const notes = noteData.map((note) => note.get({ plain: true }));
-    console.log("pageRoutes.js Line 15: Data: ", notes);
+    // console.log("pageRoutes.js Line 16: Data: ", notes);
 
     const categories = categoryData.map((category) =>
       category.get({ plain: true })
@@ -21,7 +21,7 @@ router.get("/", async function (req, res) {
     console.log(categories);
 
     // Renders Page, index.handlebars
-    res.render("index", { notes });
+    res.render("index", { notes, signedin: req.session.signed_in });
   } catch (err) {
     console.log("pageRoutes.js Line 20: Error: ", err);
     res.json(err);
@@ -38,7 +38,7 @@ router.get("/note/:id", async function (req, res) {
     // console.log("pageRoutes.js Line 32: Data: ", note);
 
     // Renders Page, note.handlebars
-    res.render("note", { note });
+    res.render("note", { note, signedin: req.session.signed_in });
   } catch (err) {
     res.json(err);
   }
