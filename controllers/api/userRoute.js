@@ -37,17 +37,15 @@ router.post("/signin", async function (req, res) {
     });
 
     if (!noteuserData) {
-      res.json(err);
-      return;
+      return res.sendStatus(404);
     }
 
-    const userPassword = await noteuserData.validatePassword(
+    const isValidPassword = await noteuserData.validatePassword(
       req.body.user_password
     );
 
-    if (!userPassword) {
-      res.json(err);
-      return;
+    if (!isValidPassword) {
+      return res.sendStatus(401);
     }
 
     req.session.save(() => {
@@ -60,6 +58,11 @@ router.post("/signin", async function (req, res) {
   } catch (err) {
     res.json(err);
   }
+});
+
+router.get("/signout", function (req, res){
+  req.session.destroy();
+  res.redirect('/signin')
 });
 
 // Exports Routes for use in App
