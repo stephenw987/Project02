@@ -1,10 +1,15 @@
 // Requires Node Modules
 const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
 
 // Requires App-specific Connection File
 const sequelize = require("../config/connection.js");
 
-class NoteUser extends Model {}
+class NoteUser extends Model {
+  validatePassword(signinPassword) {
+    return bcrypt.compareSync(signinPassword, this.user_password);
+  }
+}
 
 NoteUser.init(
   {
