@@ -34,6 +34,13 @@ NoteUser.init(
     underscored: true,
     timestamps: false,
     modelName: "noteuser",
+    hooks: {
+      beforeCreate: async (noteuser) => {
+        if(noteuser.user_password) {
+          noteuser.user_password = await bcrypt.hash(noteuser.user_password, 10);
+        }
+      }
+    }
   }
 );
 

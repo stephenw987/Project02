@@ -23,25 +23,17 @@
   </h2>
 
   {{#each categories}}
-
-    <div>
-      <h4>
-        Category ID:
-      </h4>
-      <a href="/category/{{id}}">{{id}}</a>
-
-    </div>
-
     <div>
       <h4>
         Category Name:
       </h4>
-      <p> {{category_name}} </p>
+      <a href="/category/{{id}}">{{category_name}}</a> 
       <br />
 
     </div>
 
   {{/each}}
+  
 </div>
 
 <script src="/js/add-category.js"></script>
