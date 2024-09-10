@@ -14,7 +14,7 @@ router.get("/", async function (req, res) {
     const categories = categoryData.map((category) =>
       category.get({ plain: true })
     );
-    console.log(categories);
+    // console.log("entryRoute.js Line 17, Current Categories", categories);
 
     // Renders Page, entry.handlebars
     res.render("entry", { categories });
