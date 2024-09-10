@@ -12,12 +12,12 @@ router.get("/", async function (req, res) {
     const noteData = await Note.findAll();
     const categoryData = await Category.findAll();
 
-    const rawNotes = await noteData.map( (note) => note.get({ plain: true }));
+    const rawNotes = await noteData.map((note) => note.get({ plain: true }));
     // console.log("pageRoutes.js Line 16: Data: ", notes);
 
     // create a map of all the category name with the id as a a key
-    const categoryNames = {}
-    categoryData.forEach(c => {
+    const categoryNames = {};
+    categoryData.forEach((c) => {
       // get the category as a plain object
       const cat = c.get({ plain: true });
       // add the category name to our category name map, using the id as the key
@@ -25,9 +25,9 @@ router.get("/", async function (req, res) {
     });
 
     // add a category name to each note item, using the category name map
-    const notes = rawNotes.map(n => ({
-      ...n, 
-      category_name: categoryNames[n.category_id]
+    const notes = rawNotes.map((n) => ({
+      ...n,
+      category_name: categoryNames[n.category_id],
     }));
 
     // Renders Page, index.handlebars
@@ -37,26 +37,6 @@ router.get("/", async function (req, res) {
     res.json(err);
   }
 });
-// router.get("/", async function (req, res) {
-//   try {
-//     const noteData = await Note.findAll();
-//     const categoryData = await Category.findAll();
-
-//     const notes = noteData.map((note) => note.get({ plain: true }));
-//     // console.log("pageRoutes.js Line 16: Data: ", notes);
-
-//     const categories = categoryData.map((category) =>
-//       category.get({ plain: true })
-//     );
-//     console.log(categories);
-
-//     // Renders Page, index.handlebars
-//     res.render("index", { notes, signedin: req.session.signed_in });
-//   } catch (err) {
-//     console.log("pageRoutes.js Line 20: Error: ", err);
-//     res.json(err);
-//   }
-// });
 
 // GET Note Page Router for Identified Note
 // Note: Route is NOT Prefixed
