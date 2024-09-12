@@ -3,33 +3,52 @@
 <div>
   {{#each notes}}
 
-    <div class="note-container">
+    <div class="container note-container">
       <div class="note-detail">
-        <h3>
-          Note ID
-        </h3>
-        <a href="/note/{{id}}">{{id}}</a>
+        <div class="col-md-2">
+          <h3>
+            Note ID:
+          </h3>
+        </div>
+        <div class="col-md-10">
+          <p>
+            <a href="/note/{{id}}">{{id}}</a>
+          </p>
+        </div>
+        
       </div>
 
       <div class="note-detail">
-        <h3>
-          Note Title
-        </h3>
-        <p> {{note_title}} </p>
+        <div class="col-md-2">
+          <h3>
+            Title:
+          </h3>
+        </div>
+        <div class="col-md-10 ">
+           <p> {{note_title}} </p>
+        </div> 
       </div>
 
       <div class="note-detail">
-        <h3>
-          Note Body
-        </h3>
+        <div class="col-md-2">
+          <h3>
+            Description:
+          </h3>
+        </div>
+       <div class="col-md-10">
         <p> {{note_body}} </p>
+       </div>
       </div>
 
       <div class="note-detail">
-        <h3>
-          Category
-        </h3>
-        <p> {{category_name}} </p>
+        <div class="col-md-2">
+          <h3>
+            Category:
+          </h3>
+        </div>
+        <div class="col-md-10">
+          <p> {{category_name}} </p>
+        </div>
       </div>
 
     </div>

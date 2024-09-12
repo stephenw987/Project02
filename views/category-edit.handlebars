@@ -11,16 +11,18 @@
       value="{{category.id}}"
     />
 
-    <label for="category-name">Category Name</label>
+    <label for="category-name" class="form-label">Category Name:</label>
     <input
       type="text"
       name="category-name"
+      class="form-control"
       id="category-name"
       value="{{category.category_name}}"
     />
-
-    <button type="submit" id="save-btn">Save Changes</button>
-    <button type="button" id="delete-btn">Delete Category</button>
+    <div class="d-grid d-sm-flex ">
+      <button type="submit" class="btn btn-success m-3 fw-bold" id="save-btn">Save Changes</button>
+      <button type="button" class="btn btn-danger m-3 fw-bold" id="delete-btn">Delete Category</button>
+    </div>
   </form>
 </div>
 

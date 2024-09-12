@@ -1,34 +1,66 @@
-.nav-bar {
-  flex-direction: row;
-  display: flex;
-  justify-content: space-between;
+body {
   margin: 0;
-  margin-bottom: 5px;
-  width: 50%;
-  padding: 10px;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  background-color: white;
+  line-height: 1.5;
+}
+
+.nav-bar {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
   list-style-type: none;
-  
-  
-};
+  padding-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+  background-image: linear-gradient(to right, red, orange) 
+}
+
+.nav-item:hover {
+  background-color: rgb(13, 216, 216);
+}
+
+.nav-link {
+  color: white;
+}
 
 .note-container {
-  margin-bottom: 10px;
-  border: 1mm solid lightblue;
-  color: green;
-  padding-left: 8px;
-
+  border-style: solid;
+  border-width: 4px;
+  color: black;
+  border-color: rgb(11, 156, 69);
+  border-radius: 5px;
+  margin: 6px;
+  padding: 5px;
 }
 
 .note-detail {
+  vertical-align: middle;
+  font-size: 1.2em;
   flex-direction: row;
   display: flex;
-  text-align: center;
+}
+
+.note-detail>div:nth-of-type(2) {
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
 }
 
 p {
   margin-bottom: 10px;
-  margin-left: 8px;
-  
+  margin-left: 8px; 
 }
 
 

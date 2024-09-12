@@ -1,29 +1,36 @@
 {{! Module 15 Project 2: Note Taker - Member Signin }}
 
 <div>
-  <div>
-    <p>Not yet a Member? Join!</p>
-    <a href="/join" type="button">Sign Up</a>
+  <div class="py-2">
+    <p>Not yet a member?
+      <span>
+       <a href="/join" type="button">Sign Up</a> 
+      </span>
+    </p>
   </div>
 
-  <h3>
-    Sign In
-  </h3>
-
+  <div class="m-2">
+    <h3>
+       Sign In
+    </h3>
+  </div>
+  
   <form id="signin-form">
-    <div>
-      <label for="username-signin">Enter your User Name:</label>
-      <input type="text" id="username-signin" />
+    <div class="form-group m-3 p-1">
+      <label for="username-signin">Enter Username:</label>
+      <input type="text" class="form-control" id="username-signin" />
     </div>
 
-    <div>
-      <label for="password-signin">Enter your Password:</label>
-      <input type="password" id="password-signin" />
+    <div class="form-group m-3 p-1">
+      <label for="password-signin">Enter Password:</label>
+      <input type="password" class="form-control" id="password-signin" />
     </div>
 
-    <button type="submit" id="signin-btn">
-      Sign In
-    </button>
+    <div class="d-grid d-sm-flex">
+      <button type="submit" class="btn btn-primary m-3 fw-bold" id="signin-btn">
+        Sign In
+      </button>
+    </div>
   </form>
 </div>
 
