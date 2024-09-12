@@ -2,20 +2,26 @@
 
 <div>
   <h3>
-    Join the Note Taker Application
+    Sign Up
   </h3>
   <form id="join-form">
-    <div>
-      <label for="username-join">Enter a User Name:</label>
-      <input type="text" id="username-join" name="username-join" />
-    </div>
+    <div class="container">
+        <div class="form-group m-2 p-1">
+          <label for="username-join">New Username:</label>
+          <input type="text" class="form-control" id="username-join" name="username-join" />
+        </div>
+     
+      <div class="form-group m-2 p-1">
+        <label for="password-join">New Password:</label>
+        <input type="text" class="form-control" id="password-join" name="password-join" />
+      </div>
+      <div class="d-grid d-sm-flex">
+        <button type="submit" class="btn btn-primary m-3 fw-bold" id="join-btn">
+          Join
+        </button>
+      </div>
 
-    <div>
-      <label for="password-join">Enter a Password</label>
-      <input type="text" id="password-join" name="password-join" />
     </div>
-
-    <button type="submit" id="join-btn">Join</button>
   </form>
 </div>
 

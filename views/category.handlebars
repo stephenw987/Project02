@@ -1,37 +1,35 @@
 {{! Module 15 Project 2: Note Taker - New Category and Current Category Inventory }}
 {{! http://localhost:3000/category }}
 
-<div>
+<div class="">
   <h3>
-    Enter your Category
+    Add Category
   </h3>
 
   <form id="new-category-form">
     <div>
-      <label for="category-name">Enter a new Category Name</label>
-      <input type="text" id="category-name" name="category-name" />
+      <label for="category-name" class="form-label">New Category Name:</label>
+      <input type="text" id="category-name" class="col-x-sm col-3-lg" name="category-name" />
+      <button type="submit" class="btn btn-secondary btn-sm col-x-sm m-1 py-1 px-4 fw-bold">Save</button>
     </div>
-
-    <button type="submit">Save Category</button>
   </form>
+
 </div>
 
-<div>
+<br>
 
-  <h2>
+<div class="">
+  <h3>
     Current Categories
-  </h2>
+  </h3>
 
   {{#each categories}}
-    <div>
-      <h4>
-        Category Name:
-      </h4>
-      <a href="/category/{{id}}">{{category_name}}</a> 
-      <br />
-
-    </div>
-
+      <p>
+        <span class="fs-6 "> 
+          Category Name:
+        </span>
+        <a href="/category/{{id}}">{{category_name}}</a> 
+      </p>
   {{/each}}
   
 </div>
