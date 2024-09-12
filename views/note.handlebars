@@ -6,27 +6,37 @@
     {{! <label for="note-id">Note ID</label> }}
     <input type="hidden" name="note-id" id="note-id" value="{{note.id}}" />
 
-    <label for="note-title">Note Title</label>
-    <input
-      type="text"
-      name="note-title"
-      id="note-title"
-      value="{{note.note_title}}"
-    />
+    <div class="my-2 px-4">
+      <label for="note-title" class="form-group">Note Title:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="note-title"
+        id="note-title"
+        value="{{note.note_title}}"
+      />
+    </div>
+    
+    <div class="my-2 px-4">
+      <label for="category-id" class="form-group">Note Category:</label>
+      <input
+        type="text"
+        class="form-control"
+        name="category-id"
+        id="category-id"
+        value="{{note.category_id}}"
+      />
+    </div>
 
-    <label for="note-body">Note Body</label>
-    <textarea name="note-body" id="note-body">{{note.note_body}}</textarea>
+    <div class="my-2 px-4">
+      <label for="note-body" class="form-group">Note Body:</label>
+      <textarea name="note-body" class="form-control" id="note-body">{{note.note_body}}</textarea>
+    </div>
 
-    <label for="category-id">Note Category</label>
-    <input
-      type="text"
-      name="category-id"
-      id="category-id"
-      value="{{note.category_id}}"
-    />
-
-    <button type="submit" id="save-btn">Save Changes</button>
-    <button type="button" id="delete-btn">Delete Note</button>
+    <div class="d-grid d-sm-flex">
+      <button type="submit" class="btn btn-success m-3  fw-bold" id="save-btn">Save Changes</button>
+      <button type="button" class="btn btn-danger m-3 fw-bold" id="delete-btn">Delete Note</button>
+    </div>
   </form>
 </div>
 
